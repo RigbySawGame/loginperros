@@ -28,7 +28,7 @@
                     </button>
                 </form>
 
-                <a class="link-texto" href="#">Cambiar Contraseña</a>
+                <a class="link-texto" href="#" id="cambiar-contrasena">Cambiar Contraseña</a>
             </div>
         </div>
         <div class="pie">Efectivamente pe Animal</div>
@@ -40,14 +40,17 @@
             var contrasena = document.getElementById('contrasena').value;
 
             if (usuario === 'admin' && contrasena === '123') {
-                
                 return true;
             } else {
-                
                 alert('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
                 return false;
             }
         }
+
+        document.getElementById('cambiar-contrasena').addEventListener('click', function (e) {
+            e.preventDefault(); 
+            alert('No hay segundas oportunidades, socio');
+        });
     </script>
 </body>
 
