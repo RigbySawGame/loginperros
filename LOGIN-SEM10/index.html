@@ -3,39 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1.0">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mascota Feliz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="contenido">
-        <div class="cabecera"> Mascota feliz</div>
+        <div class="cabecera">Mascota Feliz</div>
 
         <div class="elemento-centro">
             <div class="logo">
-                <img src="img/logo.jpg" alt="" srcset="">
+                <img src="img/logo.jpg" alt="Mascota Feliz Logo">
             </div>
 
             <div class="datos">
-                <input class="caja-texto" type="text" name="" id="">
-                <input class="caja-texto" type="password" name="" id="">
+                <input class="caja-texto" type="text" name="usuario" id="usuario" placeholder="Usuario">
+                <input class="caja-texto" type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
             </div>
             <div class="botones-accion">
-                <form action="lista.html" method="post">
+                <form action="lista.html" method="post" onsubmit="return validarusu()">
                     <button class="boton-login" type="submit">
                         Login
                     </button>
                 </form>
 
                 <a class="link-texto" href="#">Cambiar Contraseña</a>
-
             </div>
         </div>
         <div class="pie">Efectivamente pe Animal</div>
-
     </div>
 
+    <script>
+        function validarusu() {
+            var usuario = document.getElementById('usuario').value;
+            var contrasena = document.getElementById('contrasena').value;
+
+            if (usuario === 'admin' && contrasena === '123') {
+                
+                return true;
+            } else {
+                
+                alert('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>
